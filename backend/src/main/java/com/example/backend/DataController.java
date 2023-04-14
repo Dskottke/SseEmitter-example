@@ -27,6 +27,7 @@ public class DataController {
                 List<Data> list = dataService.getAllData();
                 try {
                     for (Data data : list) {
+                        randomDelay();
                         emitter.send(data);
                     }
                 } catch (IOException e) {
